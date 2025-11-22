@@ -1,0 +1,44 @@
+\
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiz LIBRAS — Jogo de Múltipla Escolha</title>
+  <link rel="stylesheet" href="./quiz_style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Quiz LIBRAS</h1>
+      <p class="subtitle">Veja a imagem do sinal e escolha a alternativa correta.</p>
+    </header>
+
+    <section id="quiz-area" class="card">
+      <div id="score" class="score">Pontuação: 0 / 0</div>
+      <div id="question-number" class="question-number">Pergunta 0 de 0</div>
+
+      <div class="image-wrap">
+        <img id="sign-image" src="" alt="Imagem do sinal" />
+      </div>
+
+      <div id="alternatives" class="alternatives">
+        <!-- Botões das alternativas gerados por script -->
+      </div>
+
+      <div class="controls">
+        <button id="next-btn" class="btn" disabled>Próxima</button>
+        <button id="restart-btn" class="btn ghost">Reiniciar</button>
+      </div>
+
+      <div id="feedback" class="feedback"></div>
+    </section>
+
+    <section class="footer-note">
+      <p>Coloque imagens de sinais em <code>/mnt/data/images/</code> e atualize <code>quiz_data.json</code>.</p>
+    </section>
+  </main>
+
+  <script src="./quiz_script.js"></script>
+</body>
+</html>

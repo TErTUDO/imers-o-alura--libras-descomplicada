@@ -1,0 +1,22 @@
+[
+    {
+        "word": "JavaScript",
+        "image": "images/javascript.png"
+    },
+    {
+        "word": "Python",
+        "image": "images/python.png"
+    },
+    {
+        "word": "Java",
+        "image": "images/java.png"
+    },
+    {
+        "word": "C#",
+        "image": "images/csharp.png"
+    },
+    {
+        "word": "Go",
+        "image": "images/go.png"
+    }
+]

@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+:root{
+  /* Cores Tema Fofinho Pastel */
+  --bg: #ffeef6;
+  --card: #ffeef6;
+  --accent: #ff69b4;
+  --muted: #ff4fa3;
+  --success: #4fff9e;
+  --danger: #ff5c74;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--muted);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  font-family: 'Fredoka One', cursive;
+}
+
+.container{ width:960px; max-width:96%; }
+
+header{ text-align:center; margin-bottom:18px; }
+
+h1{
+  margin:0;
+  font-size: clamp(2rem, 4vw, 2.3rem);
+  color:var(--accent);
+}
+
+.subtitle{ color:var(--muted); margin-top:6px; }
+
+.card{
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 35px rgba(255, 150, 200, 0.3);
+  animation: fadeIn 0.4s ease;
+  margin-top: 2rem;
+}
+
+.image-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 1rem;
+  background: white;
+  border-radius: 0.75rem;
+  border: 4px solid #ffa4d6;
+  width: 260px;
+  height: 260px;
+  margin: 0 auto;
+}
+
+.image-wrap img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+}
+
+.alternatives{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:1.5rem;
+}
+
+.btn{
+  padding: 0.8rem;
+  border-radius: 0.75rem;
+  border: 2px solid #ffaad4;
+  cursor:pointer;
+  font-weight: normal;
+  background: #ffd8ec;
+  color: #ff4fa3;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: #ffe9f5;
+}
+
+.btn:disabled{
+  opacity:0.6;
+  cursor:not-allowed;
+}
+.btn.correct {
+  background:rgba(16,185,129,0.18);
+  border-color: var(--success);
+  color: var(--success);
+  animation: pop 0.35s ease;
+}
+.btn.wrong {
+  background:rgba(239,68,68,0.18);
+  border-color: var(--danger);
+  color: var(--danger);
+  animation: shake 0.3s ease;
+}
+
+.controls{ display:flex; justify-content:center; gap:12px; margin-top:1.5rem; }
+
+.btn.next{
+  width: 100%;
+  border: none;
+  background: #ff82c5;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.btn.next:hover {
+  background: #ff9ad3;
+}
+
+.feedback{
+  margin-top:12px;
+  font-weight:normal;
+  min-height:22px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.feedback.correct{ color:var(--success); }
+.feedback.wrong{ color:var(--danger); }
+
+.final-score{
+  text-align: center;
+  font-size: 2rem;
+  color: #ff4fa3;
+}
+
+.score, .question-number{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* ⭐ Animação de acerto */
+@keyframes pop {
+    0% { transform: scale(0.9); }
+    50% { transform: scale(1.07); }
+    100% { transform: scale(1); }
+}
+
+/* ❌ Animação de erro */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    50% { transform: translateX(6px); }
+    75% { transform: translateX(-6px); }
+    100% { transform: translateX(0); }
+}
+
+/* 💥 Fade entre perguntas */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
